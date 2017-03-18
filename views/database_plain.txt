@@ -1,0 +1,12 @@
+get('topic/'): view.jade
+get('topic/:id') : view.jade
+
+get('topic/add') : add.jade
+get('topic/:id') : add.jade
+post('topic/add') : add.jade
+
+get('topic/:id/edit') : edit.jade
+post('topic/:id/edit') : edit.jade
+
+get('topic/:id/delete') : delete.jade
+post('topic/:id/delete') : delete.jade

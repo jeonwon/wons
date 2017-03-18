@@ -1,0 +1,23 @@
+doctype heml
+html
+  head
+    title 뉴파일
+    meta(charset='utf-8')
+  body
+    h1 Server Side JavaScript
+    ul
+      each topic in topics
+       li
+         a(href='/topic/'+topic)= topic
+    h2=title
+    =description
+    p
+    form(action='/topic' method='post')
+      p 타이틀
+        input(type='text' name='title' placeholder='input title')
+      p 내용
+        textarea(name='description')
+      p
+        input(type='file' name='description')
+      p 전송
+        input(type='submit')

@@ -1,0 +1,36 @@
+﻿doctype html
+html
+	head
+		meta(charset='utf-8')
+	body
+			h1
+				a(href='/topic') 레코드 관리 프로그램
+			ol
+				each topic in topics
+					li
+						a(href='/topic/'+topic.id)= topic.title
+			p
+						div(align='center') 자료 추가 화면입니다.
+							form(action='/add' method='post')
+									input(type='text' name='title' )
+									textarea(name='description')
+									input(type='text' name='author' )
+									input(type='submit' value='추가')
+			if topic
+				div(align='center') 자료 수정 화면입니다.
+														form(action='/edit/' method='post')
+															p 번호
+																input(type='text' name='id' value=topic.id)
+															p 제목
+																input(type='text' name='title' value=topic.title)
+															p 내용
+																textarea(name='description')
+																	=topic.description
+															p 저자
+																input(name='author' value=topic.author)
+															p
+																input(type='submit' value='수정')
+														p
+																form(action='/delete' method='post')
+																	input(type='hidden' name='id' value=topic.id)
+																	input(type='submit' value='삭제')
