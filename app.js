@@ -4,9 +4,9 @@ var fs = require('fs');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
-  password : '620507',
-  database : 'jws'
+  user     : 'wonbinj',
+  password : 'wonbin0507',
+  database : 'wonbinj'
 });
 
 connection.connect();
@@ -140,6 +140,6 @@ app.post('/delete', function(req, res){
   });
 });
 
-app.listen(3000, function () {
+app.listen(8001, function () {
   console.log('Example app listening on port 3000!');
 });
